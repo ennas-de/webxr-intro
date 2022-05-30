@@ -32,15 +32,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../assets/images/favicon-32x32.png"
+      href="./assets/images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="../assets/images/favicon-96x96.png"
+      href="./assets/images/favicon-96x96.png"
     />
-    <link rel="stylesheet" href="../webxr/css/common.css" />
+    <link rel="stylesheet" href="./webxr/css/common.css" />
 
     <title>Immersive AR Session</title>
   </head>
@@ -50,12 +50,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         <summary>Immersive AR Session</summary>
         <nav class="topnav">
           <ul>
-            <li><a href="/index.html">Hit Test</a></li>
-            <li><a href="/pages/hit-test-anchors.html">Hit Test Anchor</a></li>
+            <li><a href="/">Hit Test</a></li>
+            <li><a href="/hit-test-anchors.html">Hit Test Anchor</a></li>
             <li>
-              <a href="/pages/immersive-ar-session.html"
-                >Immersive AR Session</a
-              >
+              <a href="/immersive-ar-session.html">Immersive AR Session</a>
             </li>
           </ul>
         </nav>
@@ -69,20 +67,20 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       </details>
     </header>
     <script type="module">
-      import { WebXRButton } from "../webxr/js/util/webxr-button.js";
-      import { Scene } from "../webxr/js/render/scenes/scene.js";
+      import { WebXRButton } from "./webxr/js/util/webxr-button.js";
+      import { Scene } from "./webxr/js/render/scenes/scene.js";
       import {
         Renderer,
         createWebGLContext,
-      } from "../webxr/js/render/core/renderer.js";
-      import { SkyboxNode } from "../webxr/js/render/nodes/skybox.js";
-      import { InlineViewerHelper } from "../webxr/js/util/inline-viewer-helper.js";
-      import { Gltf2Node } from "../webxr/js/render/nodes/gltf2.js";
-      import { QueryArgs } from "../webxr/js/util/query-args.js";
+      } from "./webxr/js/render/core/renderer.js";
+      import { SkyboxNode } from "./webxr/js/render/nodes/skybox.js";
+      import { InlineViewerHelper } from "./webxr/js/util/inline-viewer-helper.js";
+      import { Gltf2Node } from "./webxr/js/render/nodes/gltf2.js";
+      import { QueryArgs } from "./webxr/js/util/query-args.js";
 
       // If requested, use the polyfill to provide support for mobile devices
       // and devices which only support WebVR.
-      import WebXRPolyfill from "../webxr/js/third-party/webxr-polyfill/build/webxr-polyfill.module.js";
+      import WebXRPolyfill from "./webxr/js/third-party/webxr-polyfill/build/webxr-polyfill.module.js";
       if (QueryArgs.getBool("usePolyfill", true)) {
         let polyfill = new WebXRPolyfill();
       }
@@ -97,7 +95,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let renderer = null;
       let scene = new Scene();
       let solarSystem = new Gltf2Node({
-        url: "../webxr/media/gltf/space/space.gltf",
+        url: "./webxr/media/gltf/space/space.gltf",
       });
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
@@ -105,7 +103,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       scene.addNode(solarSystem);
       // Still adding a skybox, but only for the benefit of the inline view.
       let skybox = new SkyboxNode({
-        url: "../webxr/media/textures/milky-way-4k.png",
+        url: "./webxr/media/textures/milky-way-4k.png",
       });
       scene.addNode(skybox);
 

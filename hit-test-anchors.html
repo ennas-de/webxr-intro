@@ -32,15 +32,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../assets/images/favicon-32x32.png"
+      href="./assets/images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="../assets/images/favicon-96x96.png"
+      href="./assets/images/favicon-96x96.png"
     />
-    <link rel="stylesheet" href="../webxr/css/common.css" />
+    <link rel="stylesheet" href="./webxr/css/common.css" />
 
     <title>Hit Test with Anchors</title>
   </head>
@@ -50,12 +50,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         <summary>Hit Test with Anchors</summary>
         <nav class="topnav">
           <ul>
-            <li><a href="/index.html">Hit Test</a></li>
-            <li><a href="/pages/hit-test-anchors.html">Hit Test Anchor</a></li>
+            <li><a href="/">Hit Test</a></li>
+            <li><a href="/hit-test-anchors.html">Hit Test Anchor</a></li>
             <li>
-              <a href="/pages/immersive-ar-session.html"
-                >Immersive AR Session</a
-              >
+              <a href="/immersive-ar-session.html">Immersive AR Session</a>
             </li>
           </ul>
         </nav>
@@ -67,17 +65,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       </details>
     </header>
     <script type="module">
-      import { WebXRButton } from "../webxr/js/util/webxr-button.js";
-      import { Scene } from "../webxr/js/render/scenes/scene.js";
+      import { WebXRButton } from "./webxr/js/util/webxr-button.js";
+      import { Scene } from "./webxr/js/render/scenes/scene.js";
       import {
         Renderer,
         createWebGLContext,
-      } from "../webxr/js/render/core/renderer.js";
-      import { Node } from "../webxr/js/render/core/node.js";
-      import { Gltf2Node } from "../webxr/js/render/nodes/gltf2.js";
-      import { DropShadowNode } from "../webxr/js/render/nodes/drop-shadow.js";
-      import { vec3 } from "../webxr/js/render/math/gl-matrix.js";
-      import { Ray } from "../webxr/js/render/math/ray.js";
+      } from "./webxr/js/render/core/renderer.js";
+      import { Node } from "./webxr/js/render/core/node.js";
+      import { Gltf2Node } from "./webxr/js/render/nodes/gltf2.js";
+      import { DropShadowNode } from "./webxr/js/render/nodes/drop-shadow.js";
+      import { vec3 } from "./webxr/js/render/math/gl-matrix.js";
+      import { Ray } from "./webxr/js/render/math/ray.js";
 
       // XR globals.
       let xrButton = null;
@@ -96,12 +94,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       scene.addNode(arObject);
 
       let flower = new Gltf2Node({
-        url: "../webxr/media/gltf/sunflower/sunflower.gltf",
+        url: "./webxr/media/gltf/sunflower/sunflower.gltf",
       });
       arObject.addNode(flower);
 
       let reticle = new Gltf2Node({
-        url: "../webxr/media/gltf/reticle/reticle.gltf",
+        url: "./webxr/media/gltf/reticle/reticle.gltf",
       });
       reticle.visible = false;
       scene.addNode(reticle);
@@ -198,7 +196,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let anchoredObjects = [];
       function addAnchoredObjectsToScene(anchor) {
         let flower = new Gltf2Node({
-          url: "../webxr/media/gltf/sunflower/sunflower.gltf",
+          url: "./webxr/media/gltf/sunflower/sunflower.gltf",
         });
         scene.addNode(flower);
         anchoredObjects.push({
